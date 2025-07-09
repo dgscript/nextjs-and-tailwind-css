@@ -1,103 +1,107 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [nextdropdown, setNextdropdown] = useState(false);
+  const [tailwinddropdown, setTailwinddropdown] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <main>
+      <p className="text-2xl text-center my-4 max-sm:text-[1.2rem]">
+        This is just a simple project that I'm making to learn{" "}
+        <span className="font-bold">Next.js</span> and{" "}
+        <span className="font-bold">Tailwind CSS</span>!
+      </p>
+
+      <Image
+        src="/hero.png"
+        alt="Next.js and Tailwind CSS"
+        width={600}
+        height={100}
+        className="w-full py-3"
+      />
+
+      <div
+        className={`shadow-lg p-7 text-justify text-[1.2rem] rounded-md bg-white mb-3 max-sm:p-5`}
+      >
+        <div
+          className={`flex justify-between items-center font-semibold text-[1.5rem] hover:cursor-pointer`}
+          onClick={() => {
+            setNextdropdown(!nextdropdown);
+          }}
+        >
+          <p className="max-sm:text-[1rem]">What is Next.js?</p>
+          <p className="text-[#1EC3D1] text-[2rem]">+</p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        <div className={nextdropdown ? "" : "hidden"}>
+          <p className="pt-5 max-sm:text-[1rem]">
+            Next.js is a really powerful tool used to make great websites. You
+            can visit their official docs{" "}
+            <a
+              href="https://nextjs.org/docs"
+              target="_blank"
+              className="text-[#1EC3D1] underline"
+            >
+              here
+            </a>
+            .
+          </p>
+
+          <br />
+
+          <p className="max-sm:text-[1rem]">
+            It's a framework based on React, so for you to better understand
+            Next.js you first have to learn React, which is a great tool for
+            frontend development aswell! Next.js enables features like
+            server-side rendering, static site generation, and API routes,
+            making it easier to build fast and scalable web applications. It
+            also provides built-in routing and optimizations out of the box.
+          </p>
+        </div>
+      </div>
+
+      <div
+        className={`shadow-lg p-7 text-justify text-[1.2rem] rounded-md bg-white max-sm:p-5`}
+      >
+        <div
+          className={`flex justify-between items-center font-semibold text-[1.5rem] hover:cursor-pointer`}
+          onClick={() => {
+            setTailwinddropdown(!tailwinddropdown);
+          }}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <p className="max-sm:text-[1rem]">What is Tailwind CSS?</p>
+          <p className="text-[#1EC3D1] text-[2rem]">+</p>
+        </div>
+        <div className={tailwinddropdown ? "" : "hidden"}>
+          <p className="pt-5 max-sm:text-[1rem]">
+            Tailwind CSS is a CSS tool that uses pre written classes to ease
+            your life while making a website. So there's no need to actually
+            write CSS! Visit their official docs{" "}
+            <a
+              href="https://tailwindcss.com/docs/installation/using-vite"
+              target="_blank"
+              className="text-[#1EC3D1] underline"
+            >
+              here
+            </a>
+            .
+          </p>
+
+          <br />
+
+          <p className="max-sm:text-[1rem]">
+            It can save a ton of your time! This whole project is made using
+            Tailwind CSS. Tailwind CSS is a utility-first CSS framework that
+            lets you style your web pages by composing small, reusable utility
+            classes directly in your HTML or JSX. Instead of writing custom CSS,
+            you use these classes to quickly build modern, responsive designs.
+            This approach helps keep your codebase clean and makes it easy to
+            maintain consistent styling across your project.
+          </p>
+        </div>
+      </div>
+    </main>
   );
 }

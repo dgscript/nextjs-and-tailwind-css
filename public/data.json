@@ -1,0 +1,18 @@
+[
+  {
+    "day": "1",
+    "content": "Well, on day one I just forgot about this blog so I didn't write anything. But what I basically did was reset this project a bunch of times because I was unsure if I really wanted to learn Tailwind CSS. I'm learning because it's good to at least have an idea on how this tool works. And I'm leaning Next.js because I really liked their router system, it's really easy to understand and to use it. :)"
+  },
+  {
+    "day": "2",
+    "content": "Same as the day 1 I forgot about this blog but I'll write everything down in here as if it was the day 1. I Changed a lot of things on the home page and changed the background as well, I was unsure if I wanted the project to be dark theme or light theme so I just kept as a light theme, maybe in the future I can implement a change theme button and a translation button too. And I keep forgetting that I'm working with typescript. :D"
+  },
+  {
+    "day": "3",
+    "content": "I'm starting to like Tailwind not gonna lie. In this day I made the header responsive and it was so easy to make it responsive with Tailwind. There was no need to open multiple pages to make a simple menu button. I think I'll use Tailwind when making big projects that have multiple pages and such, but when making small projects I'll stick to the good old SCSS. Another important thing that I did was adding a footer which was a huge headache because I had no idea how to place the footer on the bottom of the page, I did this by setting the body to display flex, that was a nice idea because the items now are evenly spaced no matter the size of the page, so the header will stay on top, main content on center and footer on bottom. Other things is that the main contect kept shrinking so because I forgot to set a width, everytime you set a max-width is really important to set a width first, that'll save you a lot of time debugging. :D"
+  },
+  {
+    "day": "4",
+    "content": "Just finished the responsivity for the whole project and I think it's done, it was a intresting project to work on. I learnt some Tailwind CSS, not everything, but the necessary to understand how this tool work, same goes for Next.js. Both of them are really powerful tool, gonna definetly use them in future projects! :)"
+  }
+]
